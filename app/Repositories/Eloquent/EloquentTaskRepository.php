@@ -39,7 +39,7 @@ class EloquentTaskRepository implements TaskRepositoryInterface {
 
     public function updateStatus(int $id, string $status): Task
     {
-        $task = $this->find($id);
+        $task = Task::find($id);
         $task->update([
             'status' => $status,
             'completed_at' => now(),
